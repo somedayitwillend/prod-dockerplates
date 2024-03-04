@@ -7,6 +7,39 @@ This Repository **Dockerplates** is my personal docker-compose file collection t
 
 I created them as free resources to be used in your homelab environment servers if you choose to use them. Keep in mind to tailor them to your specific infrastructure as they do not contain the environment variables or tokens needed to function correctly.
 
+## Showcase
+### `Homarr` dashboard
+
+<img src="img/homarr.png">
+
+A simple, yet powerful fully customizable dashboard for your server.
+
+### `Jellyfin` media server
+
+<img src="img/jellyfin.png">
+
+Jellyfin is the volunteer-built media solution that puts you in control of your media. Stream to any device from your own server, with no strings attached. Your media, your server, your way.
+
+<img src="img/jellyfin-movies.png">
+
+### `Jellyseerr` media library management tool
+
+<img src="img/jellyseerr.png">
+
+Jellyseerr is a free and open source software application for managing requests for your media library. It is a fork of Overseerr built to bring support for Jellyfin & Emby media servers!
+
+### `Transmission` torrent client
+
+<img src="img/transmission.png">
+
+A Fast, Easy and Free Bittorrent Client
+
+### `Portainer` container manager
+
+<img src="img/portainer.png">
+
+Portainer is a lightweight service delivery platform for containerized applications that can be used to manage Docker, Swarm, Kubernetes and ACI environments.
+
 ## Other Resources
 
 - [Dotfiles](https://github.com/somedayitwillend/hyprland_dotfiles) - My personal configuration files for Hyprland linux on arch.
