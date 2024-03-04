@@ -2,7 +2,7 @@
 
 **Hey, there!**
 
-**I am Hussar, and I’m passionate about DevOps stuff.**
+![Header](./github-header-image.png)
 
 This Repository **Dockerplates** is my personal docker-compose file collection that I use on my homelab server. Here you can find templates, and configurations for a dashboard for all your services, docker containers, a discord bot for creating images based on your current rio in WoW with a few other functions and a self hosted media server.
 
