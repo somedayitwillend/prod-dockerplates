@@ -26,7 +26,7 @@ services:
 
   transmission:
     image: lscr.io/linuxserver/transmission:latest
-    container_name: transmission_shows
+    container_name: transmission_sonarr
     environment:
       - PUID=
       - PGID=

@@ -26,7 +26,7 @@ services:
 
   transmission:
     image: lscr.io/linuxserver/transmission:latest
-    container_name: transmission_movies
+    container_name: transmission_radarr
     environment:
       - PUID=
       - PGID=
