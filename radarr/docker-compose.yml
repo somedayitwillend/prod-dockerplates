@@ -1,0 +1,57 @@
+version: "2.1"
+services:
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    environment:
+      - PUID=
+      - PGID=
+      - TZ=
+    volumes:
+      - .radarr/config:/config
+      - /path/to/movies/directory:/movies
+    ports:
+      - 7878:7878
+    restart: always
+    networks:
+      - traefik
+    labels:
+          - "traefik.enable=true"
+          - "traefik.http.routers.radarr.entrypoints=web,websecure"
+          - "traefik.http.routers.radarr.rule=Host(`example.com`)"
+          - "traefik.http.routers.radarr.service=radarr-service"
+          - "traefik.http.services.radarr-service.loadbalancer.server.port=7878"
+          - "traefik.http.routers.radarr.tls=true"
+          - "traefik.http.routers.radarr.tls.certresolver=production"
+
+  transmission:
+    image: lscr.io/linuxserver/transmission:latest
+    container_name: transmission_movies
+    environment:
+      - PUID=
+      - PGID=
+      - TZ=
+      - USER= #optional
+      - PASS=. #optional
+    volumes:
+      - .radarr/transmission/config:/config
+      - /path/to/movies/directory:/downloads
+      - /path/to/movies/directory/watch:/watch
+    ports:
+      - 9091:9091
+      - 51413:51413
+      - 51413:51413/udp
+    restart: always
+    networks:
+      - traefik
+    labels:
+          - "traefik.enable=true"
+          - "traefik.http.routers.transmissionmovies.entrypoints=web,websecure"
+          - "traefik.http.routers.transmissionmovies.rule=Host(`example.com`)"
+          - "traefik.http.routers.transmissionmovies.service=transmissionmovies-service"
+          - "traefik.http.services.transmissionmovies-service.loadbalancer.server.port=9091"
+          - "traefik.http.routers.transmissionmovies.tls=true"
+          - "traefik.http.routers.transmissionmovies.tls.certresolver=production"
+networks:
+  traefik:
+    external: true

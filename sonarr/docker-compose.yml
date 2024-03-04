@@ -1,0 +1,55 @@
+version: "2.1"
+services:
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    environment:
+      - PUID=
+      - PGID=
+      - TZ=
+    volumes:
+      - .sonarr/config:/config
+      - /path/to/tvshows/directory:/tv
+    ports:
+      - 8989:8989
+    restart: always
+    networks:
+      - traefik
+    labels:
+          - "traefik.enable=true"
+          - "traefik.http.routers.sonarr.entrypoints=web,websecure"
+          - "traefik.http.routers.sonarr.rule=Host(`example.com`)"
+          - "traefik.http.routers.sonarr.service=sonarr-service"
+          - "traefik.http.services.sonarr-service.loadbalancer.server.port=8989"
+          - "traefik.http.routers.sonarr.tls=true"
+          - "traefik.http.routers.sonarr.tls.certresolver=production"
+
+  transmission:
+    image: lscr.io/linuxserver/transmission:latest
+    container_name: transmission_shows
+    environment:
+      - PUID=
+      - PGID=
+      - TZ=
+      - USER= #optional
+      - PASS= #optional
+    volumes:
+      - .sonarr/transmission/config:/config
+      - /path/to/tvshows/directory:/downloads
+      - /path/to/tvshows/directory/watch:/watch
+    ports:
+      - 9092:9091
+      - 51414:51413
+      - 51414:51413/udp
+    restart: always
+    networks:
+      - traefik
+    labels:
+          - "traefik.enable=true"
+          - "traefik.http.routers.transmissionshows.entrypoints=web,websecure"
+          - "traefik.http.routers.transmissionshows.rule=Host(`example.com`)"
+          - "traefik.http.routers.transmissionshows.tls=true"
+          - "traefik.http.routers.transmissionshows.tls.certresolver=production"
+networks:
+  traefik:
+    external: true

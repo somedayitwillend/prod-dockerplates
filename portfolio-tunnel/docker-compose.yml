@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  cloudflaretunnel:
+    container_name: portfolio-tunnel
+    image: cloudflare/cloudflared:latest
+    restart: always
+    environment:
+      - TUNNEL_TOKEN=
+    command: tunnel --no-autoupdate run
+    networks:
+      - cloudflare
+
+networks:
+  cloudflare:
+    external: true

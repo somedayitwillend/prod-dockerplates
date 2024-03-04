@@ -1,0 +1,29 @@
+version: "2.1"
+services:
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    environment:
+      - PUID=
+      - PGID=
+      - TZ=
+    volumes:
+      - .jellyfin/config:/config
+      - /path/to/shows/directory:/data/tvshows
+      - /path/to/movies/directory:/data/movies
+    ports:
+      - 8096:8096
+    restart: always
+    networks:
+      - traefik
+    labels:
+          - "traefik.enable=true"
+          - "traefik.http.routers.jellyfin.entrypoints=web,websecure"
+          - "traefik.http.routers.jellyfin.rule=Host(`example.com`)"
+          - "traefik.http.routers.jellyfin.service=jellyfin-service"
+          - "traefik.http.services.jellyfin-service.loadbalancer.server.port=8096"
+          - "traefik.http.routers.jellyfin.tls=true"
+          - "traefik.http.routers.jellyfin.tls.certresolver=production"
+networks:
+  proxy:
+    external: true

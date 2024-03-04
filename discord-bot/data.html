@@ -1,0 +1,142 @@
+<html>
+	<style>
+		body {
+			margin: 0;
+			background-color: transparent;
+		}
+		.data {
+			height: 230px;
+			width: 600px;
+			padding: 10px;
+			border-radius: 10px;
+			color: white;
+		}
+		.data.horde {
+			background: url(PICSbgh.jpg);
+			background-size: contain;
+		}
+		.data.alliance {
+			background: url(PICSbga.jpg);
+			background-size: contain;
+		}
+		.player {
+			margin-bottom: 20px;
+		}
+		.player,
+		.player div {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			font-size: 40px;
+		}
+		.player img {
+			height: 64px;
+			width: 64px;
+			border-radius: 10px;
+			margin-right: 20px;
+			border: 1px solid black;
+		}
+		.player img.horde {
+			box-shadow: 0 0 20px #e02929;
+		}
+		.player img.alliance {
+			box-shadow: 0 0 20px #69f;
+		}
+		.player .score {
+			background: #181818;
+			padding: 10px 20px;
+			border: 1px solid white;
+			border-radius: 10px;
+		}
+		.dungeons {
+			display:flex; font-size: 24px; font-weight: 700; text-align: center; gap:10px; margin-bottom: 10px;
+		}
+		.dungeons div {
+			width: 64px;height: 64px;display: grid;border-radius: 10px;border: 1px solid #ffffff82;
+		}
+	  </style>
+	<body>
+		<div class="data FACTION">
+			<div class="player">
+				<div>
+					<img src="PLAYER.AVATAR" class="FACTION" />
+					<span>PLAYER.NAME</span>
+				</div>
+				<div class="score">
+					<span>PLAYER.PERCENT%</span>
+				</div>
+				<div class="score">
+					<span>PLAYER.SCORE</span>
+				</div>
+			</div>
+			<div class="dungeons">
+				<div style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) 0% 0% / cover, url(PICSAD.jpg);background-size: cover;">
+					<span>FORTI.AD</span>
+					<span>AD</span>
+				</div>
+				<div style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) 0% 0% / cover, url(PICSBRH.jpg);background-size: cover;">
+					<span>FORTI.BRH</span>
+					<span>BRH</span>
+				</div>
+				<div style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) 0% 0% / cover, url(PICSDHT.jpg);background-size: cover;">
+					<span>FORTI.DHT</span>
+					<span>DHT</span>
+				</div>
+				<div style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) 0% 0% / cover, url(PICSEB.jpg);background-size: cover;">
+					<span>FORTI.EB</span>
+					<span>EB</span>
+				</div>
+				<div style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) 0% 0% / cover, url(PICSFALL.jpg);background-size: cover;">
+					<span>FORTI.FALL</span>
+					<span>FALL</span>
+				</div>
+				<div style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) 0% 0% / cover, url(PICSRISE.jpg);background-size: cover;">
+					<span>FORTI.RISE</span>
+					<span>RISE</span>
+				</div>
+				<div style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) 0% 0% / cover, url(PICSTOTT.jpg);background-size: cover;">
+					<span>FORTI.TOTT</span>
+					<span>TOTT</span>
+				</div>
+				<div style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) 0% 0% / cover, url(PICSWM.jpg);background-size: cover;">
+					<span>FORTI.WM</span>
+					<span>WM</span>
+				</div>
+			</div>
+			<div class="dungeons">
+				<div style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) 0% 0% / cover, url(PICSAD.jpg);background-size: cover;">
+					<span>TYRA.AD</span>
+					<span>AD</span>
+				</div>
+				<div style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) 0% 0% / cover, url(PICSBRH.jpg);background-size: cover;">
+					<span>TYRA.BRH</span>
+					<span>BRH</span>
+				</div>
+				<div style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) 0% 0% / cover, url(PICSDHT.jpg);background-size: cover;">
+					<span>TYRA.DHT</span>
+					<span>DHT</span>
+				</div>
+				<div style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) 0% 0% / cover, url(PICSEB.jpg);background-size: cover;">
+					<span>TYRA.EB</span>
+					<span>EB</span>
+				</div>
+				<div style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) 0% 0% / cover, url(PICSFALL.jpg);background-size: cover;">
+					<span>TYRA.FALL</span>
+					<span>FALL</span>
+				</div>
+				<div style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) 0% 0% / cover, url(PICSRISE.jpg);background-size: cover;">
+					<span>TYRA.RISE</span>
+					<span>RISE</span>
+				</div>
+				<div style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) 0% 0% / cover, url(PICSTOTT.jpg);background-size: cover;">
+					<span>TYRA.TOTT</span>
+					<span>TOTT</span>
+				</div>
+				<div style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) 0% 0% / cover, url(PICSWM.jpg);background-size: cover;">
+					<span>TYRA.WM</span>
+					<span>WM</span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

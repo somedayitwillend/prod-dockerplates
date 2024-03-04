@@ -1,0 +1,31 @@
+services:
+  traefik:
+    image: traefik:v2.10.5
+    container_name: traefik
+    ports:
+      - 80:80
+      - 443:443
+      - 8080:8080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./config/traefik.yaml:/etc/traefik/traefik.yaml:ro
+      - ./config/conf/:/etc/traefik/conf/
+      - ./config/certs/:/etc/traefik/certs/
+    environment:
+      - CF_DNS_API_TOKEN= # Cloudflare API token
+    restart: always
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.traefik.rule=Host(`example.com`)"
+      - "traefik.http.routers.traefik.entrypoints=web,websecure"
+      - "traefik.http.routers.traefik.tls=true"
+      - "traefik.http.routers.traefik.tls.certresolver=production"
+      - "traefik.http.routers.traefik.service=api@internal"
+      - "traefik.http.routers.traefik.middlewares=traefik-auth"
+      - "traefik.http.middlewares.traefik-auth.basicauth.users=" # generate user and password (echo $(htpasswd -nbB USER "PASS") | sed -e s/\\$/\\$\\$/g)
+
+networks:
+  traefik:
+    external: true
