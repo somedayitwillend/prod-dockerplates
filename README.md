@@ -42,6 +42,6 @@ Portainer is a lightweight service delivery platform for containerized applicati
 
 ## Other Resources
 
-- [Dotfiles](https://github.com/somedayitwillend/hyprland_dotfiles) - My personal configuration files for Hyprland linux on arch.
+- [Old dotfiles](https://github.com/somedayitwillend/hyprland_dotfiles) - My personal configuration files for Hyprland linux on arch.
 
-- [Old dotfiles](https://github.com/somedayitwillend/sway-dotfiles) - Old Sway dotfiles for arch before I started using Hyprland.
+- [Older dotfiles](https://github.com/somedayitwillend/sway-dotfiles) - Old Sway dotfiles for arch before I started using Hyprland.
