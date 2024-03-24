@@ -24,32 +24,33 @@ services:
           - "traefik.http.routers.sonarr.tls=true"
           - "traefik.http.routers.sonarr.tls.certresolver=production"
 
-  transmission:
-    image: lscr.io/linuxserver/transmission:latest
-    container_name: transmission_sonarr
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent_shows
     environment:
       - PUID=
       - PGID=
       - TZ=
-      - USER= #optional
-      - PASS= #optional
+      - WEBUI_PORT=8088
+      - TORRENTING_PORT=6882
     volumes:
-      - .sonarr/transmission/config:/config
+      - .sonarr/config:/config
       - /path/to/tvshows/directory:/downloads
-      - /path/to/tvshows/directory/watch:/watch
     ports:
-      - 9092:9091
-      - 51414:51413
-      - 51414:51413/udp
+      - 8088:8088
+      - 6882:6881
+      - 6882:6881/udp
     restart: always
     networks:
       - traefik
     labels:
-          - "traefik.enable=true"
-          - "traefik.http.routers.transmissionshows.entrypoints=web,websecure"
-          - "traefik.http.routers.transmissionshows.rule=Host(`example.com`)"
-          - "traefik.http.routers.transmissionshows.tls=true"
-          - "traefik.http.routers.transmissionshows.tls.certresolver=production"
+      - traefik.enable=true
+      - traefik.http.routers.torrentshows.entrypoints=web,websecure
+      - traefik.http.routers.torrentshows.rule=Host(`example.com`)
+      - traefik.http.routers.torrentshows.service=torrentshows-service
+      - traefik.http.services.torrentshows-service.loadbalancer.server.port=8088
+      - traefik.http.routers.torrentshows.tls=true
+      - traefik.http.routers.torrentshows.tls.certresolver=production
 networks:
   traefik:
     external: true
