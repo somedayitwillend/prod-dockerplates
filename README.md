@@ -1,7 +1,7 @@
 ![Header](./img/hussar-header-image.png)
 # This repo is about my `Dockerplates`
 
-This Repository **Dockerplates** is my personal docker-compose file collection that I use on my homelab server. Here you can find templates, and configurations for a dashboard for all your services, docker containers, a discord bot for creating images based on your current rio in WoW with a few other functions and a self hosted media server.
+This Repository **Dockerplates** is my personal docker-compose file collection that I use on my homelab server. Here you can find templates, and configurations for a dashboard for all your services, docker containers and a self hosted media server.
 
 > :warning: Be aware that products change over time. I do my best to keep up with the latest changes and releases in my free time, but please understand that this won’t always be the case.
 
