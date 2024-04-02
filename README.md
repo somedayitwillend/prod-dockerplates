@@ -46,11 +46,29 @@ Portainer is a lightweight service delivery platform for containerized applicati
 
 A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager.
 
-### `Uptime Kuma` 
+### `Uptime Kuma` monitoring tool
 
 <img src="img/uptime.png">
 
 A fancy, easy-to-use and reactive self-hosted uptime monitor.
+
+### `Prowlarr` indexer
+
+<img src="img/prowlarr.png">
+
+Prowlarr is a indexer manager/proxy built on the popular arr .net/reactjs base stack to integrate with your various PVR apps. Prowlarr supports both Torrent Trackers and Usenet Indexers. It integrates seamlessly with Sonarr, Radarr, Lidarr, and Readarr offering complete management of your indexers with no per app Indexer setup required.
+
+### `Pi-hole` dns ad blocker
+
+<img src="img/pihole.png">
+
+The Pi-hole® is a DNS sinkhole that protects your devices from unwanted content, without installing any client-side software.
+
+### `traefik` reverse proxy
+
+<img src="img/traefik.png">
+
+Traefik is a leading modern reverse proxy and load balancer that makes deploying microservices easy. Traefik integrates with your existing infrastructure components and configures itself automatically and dynamically.
 
 ## Other Resources
 
