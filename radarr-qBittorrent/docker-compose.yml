@@ -24,34 +24,33 @@ services:
           - "traefik.http.routers.radarr.tls=true"
           - "traefik.http.routers.radarr.tls.certresolver=production"
 
-  transmission:
-    image: lscr.io/linuxserver/transmission:latest
-    container_name: transmission_movies
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent_movies
     environment:
       - PUID=
       - PGID=
       - TZ=
-      - USER= #optional
-      - PASS=. #optional
+      - WEBUI_PORT=8087
+      - TORRENTING_PORT=6881
     volumes:
-      - .radarr/transmission/config:/config
+      - ./radarr/qbittorrent/config:/config
       - /path/to/movies/directory:/downloads
-      - /path/to/movies/directory/watch:/watch
     ports:
-      - 9091:9091
-      - 51413:51413
-      - 51413:51413/udp
+      - 8087:8087
+      - 6881:6881
+      - 6881:6881/udp
     restart: always
     networks:
       - traefik
     labels:
-          - "traefik.enable=true"
-          - "traefik.http.routers.transmissionmovies.entrypoints=web,websecure"
-          - "traefik.http.routers.transmissionmovies.rule=Host(`example.com`)"
-          - "traefik.http.routers.transmissionmovies.service=transmissionmovies-service"
-          - "traefik.http.services.transmissionmovies-service.loadbalancer.server.port=9091"
-          - "traefik.http.routers.transmissionmovies.tls=true"
-          - "traefik.http.routers.transmissionmovies.tls.certresolver=production"
+      - traefik.enable=true
+      - traefik.http.routers.torrentmovies.entrypoints=web,websecure
+      - traefik.http.routers.torrentmovies.rule=Host(`example.com`)
+      - traefik.http.routers.torrentmovies.service=torrentmovies-service
+      - traefik.http.services.torrentmovies-service.loadbalancer.server.port=8087
+      - traefik.http.routers.torrentmovies.tls=true
+      - traefik.http.routers.torrentmovies.tls.certresolver=production
 networks:
   traefik:
     external: true
