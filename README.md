@@ -40,6 +40,18 @@ The Qbittorrent project aims to provide an open-source software alternative to Â
 
 Portainer is a lightweight service delivery platform for containerized applications that can be used to manage Docker, Swarm, Kubernetes and ACI environments.
 
+### `Dockge` compose file manager
+
+<img src="img/dockge.png">
+
+A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager.
+
+### `Uptime Kuma` 
+
+<img src="img/uptime.png">
+
+A fancy, easy-to-use and reactive self-hosted uptime monitor.
+
 ## Other Resources
 
 - [Old dotfiles](https://github.com/somedayitwillend/hyprland_dotfiles) - My personal configuration files for Hyprland linux on arch.
