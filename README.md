@@ -72,8 +72,8 @@ Traefik is a leading modern reverse proxy and load balancer that makes deploying
 
 ## Other Resources
 
-- [Old dotfiles](https://github.com/somedayitwillend/hyprland_dotfiles) - My personal configuration files for Hyprland linux on arch.
+- [Neovide config](https://github.com/somedayitwillend/neovim-config) - My amazing neovide config that I currently use for work.
 
-- [Older dotfiles](https://github.com/somedayitwillend/sway-dotfiles) - Old Sway dotfiles for arch before I started using Hyprland.
+- [Old dotfiles](https://github.com/somedayitwillend/hyprland_dotfiles) - My personal configuration files for Hyprland linux on arch.
 
 - [Something fun](https://github.com/somedayitwillend/network-traffic-tracker) - Visualize your network traffic.
