@@ -86,7 +86,7 @@ Ansible is an open source IT automation engine that automates provisioning, conf
 
 <img src="img/wekan.png">
 
-WeKan is a Open Source software collaborative kanban board application. Whether you’re maintaining a personal todo list, planning your holidays with some friends, or working in a team on your next revolutionary idea, Kanban boards are an unbeatable tool to keep your things organized.
+WeKan is an Open Source software collaborative kanban board application. Whether you’re maintaining a personal todo list, planning your holidays with some friends, or working in a team on your next revolutionary idea, Kanban boards are an unbeatable tool to keep your things organized.
 
 ## Other Resources
 
