@@ -76,10 +76,22 @@ Traefik is a leading modern reverse proxy and load balancer that makes deploying
 
 Nginx is the DevOps community’s most beloved http web server. And developers love the PHP programming language because it enables them to quickly build and deploy interactive websites however, neither nginx nor the nginx container has built in PHP support. This container config solves that problem.
 
+### `Ansible` Ansible Semaphore UI for automation
+
+<img src="img/ansible.png">
+
+Ansible is an open source IT automation engine that automates provisioning, configuration management, application deployment, orchestration, and many other IT processes. It is free to use, and the project benefits from the experience and intelligence of its thousands of contributors. Link to ansible playbooks at the end of readme
+
+### `WeKan` Open Source kanban
+
+<img src="img/wekan.png">
+
+WeKan is a Open Source software collaborative kanban board application. Whether you’re maintaining a personal todo list, planning your holidays with some friends, or working in a team on your next revolutionary idea, Kanban boards are an unbeatable tool to keep your things organized.
+
 ## Other Resources
 
 - [Neovide config](https://github.com/somedayitwillend/neovim-config) - My amazing neovide config that I currently use for work.
 
-- [Old dotfiles](https://github.com/somedayitwillend/hyprland_dotfiles) - My personal configuration files for Hyprland linux on arch.
+- [Automation](https://github.com/somedayitwillend/ansible-playbooks) - Ansible automation yaml files.
 
 - [Something fun](https://github.com/somedayitwillend/network-traffic-tracker) - Visualize your network traffic.
