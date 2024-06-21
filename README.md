@@ -70,6 +70,12 @@ The Pi-hole® is a DNS sinkhole that protects your devices from unwanted content
 
 Traefik is a leading modern reverse proxy and load balancer that makes deploying microservices easy. Traefik integrates with your existing infrastructure components and configures itself automatically and dynamically.
 
+### `Nginx-PHP-FPM` web server with php support
+
+<img src="img/nginx.png">
+
+Nginx is the DevOps community’s most beloved http web server. And developers love the PHP programming language because it enables them to quickly build and deploy interactive websites however, neither nginx nor the nginx container has built in PHP support. This container config solves that problem.
+
 ## Other Resources
 
 - [Neovide config](https://github.com/somedayitwillend/neovim-config) - My amazing neovide config that I currently use for work.
