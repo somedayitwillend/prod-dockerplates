@@ -1,0 +1,41 @@
+version: '3.3'
+
+services:
+  wekan-db:
+    image: mongo:4.2
+    restart: always
+    container_name: wekan-db
+    volumes:
+      - db-data:/data/db
+    networks:
+      traefik:
+
+  wekan:
+    image: wekanteam/wekan:latest
+    restart: always
+    container_name: wekan
+    environment:
+      - MONGO_URL=mongodb://wekan-db:27017/wekan
+      - ROOT_URL=https://example.com
+    depends_on:
+      - wekan-db
+    networks:
+      - traefik
+    ports:
+      - 8080:8080
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.wekan.entrypoints=web,websecure
+      - traefik.http.routers.wekan.rule=Host(`example.com`)
+      - traefik.http.routers.wekan.service=wekan-service
+      - traefik.http.services.wekan-service.loadbalancer.server.port=8080
+      - traefik.http.routers.wekan.tls=true
+      - traefik.http.routers.wekan.tls.certresolver=production
+      - deunhealth.restart.on.unhealthy=true
+
+volumes:
+  db-data:
+
+networks:
+  traefik:
+    external: true
